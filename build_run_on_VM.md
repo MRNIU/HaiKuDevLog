@@ -7,7 +7,7 @@
 ## 获取源码
 
 - buildtools
-    
+  
         git clone https://review.haiku-os.org/buildtools
 
 - HaiKu
@@ -29,7 +29,6 @@ Image Format: 稀疏磁盘映像
 
 将 buildtools/ 及 haiku/ 复制到 磁盘映像的根目录去
 
-
 ## 编译
 
 ### 工具构建
@@ -39,7 +38,7 @@ Image Format: 稀疏磁盘映像
     make
     sudo ./jam0 install
     [Enter your password]
-    
+
 使用
     
     jam -v
@@ -47,8 +46,9 @@ Image Format: 稀疏磁盘映像
 判断是否正常安装，正常结果如下
 
     Jam 2.5-haiku-20111222. OS=MACOSX. Copyright 1993-2002 Christopher Seiwald
-   
-#### gcc    
+
+#### gcc
+
 在 HaiKu 文件夹下
 
 - 在独立文件夹下编译
@@ -59,7 +59,7 @@ Image Format: 稀疏磁盘映像
 - 在 HaiKu 文件夹下编译
 
         ./configure --build-cross-tools x86_64 ../buildtools/
-        
+    
 ### 构建 HaiKu
 
 
@@ -71,16 +71,17 @@ Image Format: 稀疏磁盘映像
 - 适用于开发的系统(不包含应用程序)
 
         jam -q -j2 @image
-        
+    
     根据你的 CPU 情况配置 `-j2` 参数。
     
 - 完整系统
         
         jam -q -j2 @nightly-raw
-        
+    
     根据你的 CPU 情况配置 `-j2` 参数。
         
         
+
 编译时会下载一些文件
         
 ## 在虚拟机运行
