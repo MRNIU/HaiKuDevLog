@@ -1225,6 +1225,10 @@ NOTES:
     Hammer uses the kernel's buffer cache for both v-node-related operations and
     for block device operations.
 
+    
+
+
+
 - What can be adjusted easily, and what needs more work? 
 
   - The main job is interface between Haiku and HAMMER.
@@ -1239,7 +1243,10 @@ NOTES:
 
   - Haiku
 
-  
+
+
+
+
 
 # Reference
 
