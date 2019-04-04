@@ -15,38 +15,39 @@ It's okay to port over the code from other systems, although we prefer code that
 
 # Analysis of the HAMMER FS
 
-|      File name       | Description |
-| :------------------: | :---------: |
-|       hammer.h       |             |
-|  hammer_blockmap.c   |             |
-|    hammer_btree.c    |             |
-|    hammer_btree.h    |             |
-|     hammer_crc.h     |             |
-|   hammer_cursor.c    |             |
-|   hammer_cursor.h    |             |
-|    hammer_dedup.c    |             |
-|    hammer_disk.h     |             |
-|   hammer_flusher.c   |             |
-|    hammer_inode.c    |             |
-|     hammer_io.c      |             |
-|    hammer_ioctl.c    |             |
-|    hammer_ioctl.h    |             |
-|   hammer_mirror.c    |             |
-|   hammer_mirror.h    |             |
-|   hammer_object.c    |             |
-|   hammer_ondisk.c    |             |
-|     hammer_pfs.c     |             |
-|    hammer_prune.c    |             |
-|  hammer_rebalance.c  |             |
-|   hammer_reblock.c   |             |
-|   hammer_recover.c   |             |
-|    hammer_redo.c     |             |
-|   hammer_signal.c    |             |
-|    hammer_subs.c     |             |
-| hammer_transaction.c |             |
-|    hammer_undo.c     |             |
-|   hammer_vfsops.c    |             |
-|   hammer_volume.c    |             |
+|      File name       |                         Description                          |
+| :------------------: | :----------------------------------------------------------: |
+|       hammer.h       |        This header file contains structures used internally by the HAMMERFS implementation.        |
+|  hammer_blockmap.c   |                       HAMMER blockmap                        |
+|    hammer_btree.c    |                     HAMMER B-Tree index                      |
+|    hammer_btree.h    |                     HAMMER B-Tree index                      |
+|     hammer_crc.h     |             crc校验，定义在 sys/libkern/crc32.c              |
+|   hammer_cursor.c    |        HAMMER B-Tree index - cursor support routines         |
+|   hammer_cursor.h    | The primary in-memory management structure for B-Tree operations. |
+|    hammer_dedup.c    |                         重复数据删除                         |
+|    hammer_disk.h     | Represent the on-disk format for a HAMMER filesystem |
+|   hammer_flusher.c   |              HAMMER dependancy flusher thread.               |
+|    hammer_inode.c    |                        inode相关操作                         |
+|     hammer_io.c      |          IO Primitives and buffer cache management           |
+|    hammer_ioctl.c    |                                                              |
+|    hammer_ioctl.h    |                  Common HAMMER ioctl header                  |
+|   hammer_mirror.c    | HAMMER mirroring ioctls - serialize and deserialize modifications made to a filesystem. |
+|   hammer_mirror.h    |                                                              |
+|   hammer_object.c    |                                                              |
+|   hammer_ondisk.c    |             Manage HAMMER's on-disk structures.              |
+|     hammer_pfs.c     |     HAMMER PFS ioctls - Manage pseudo-fs configurations      |
+|    hammer_prune.c    |                                                              |
+|  hammer_rebalance.c  |                                                              |
+|   hammer_reblock.c   | HAMMER reblocker - This code frees up fragmented physical space |
+|   hammer_recover.c   |                                                              |
+|    hammer_redo.c     |  HAMMER redo - REDO record support for the UNDO/REDO FIFO.   |
+|   hammer_signal.c    |  Check for interruption when doing a long ioctl operation.   |
+|    hammer_subs.c     |                  HAMMER structural locking                   |
+| hammer_transaction.c |                                                              |
+|    hammer_undo.c     |          HAMMER undo - undo buffer/FIFO management.          |
+|   hammer_vfsops.c    | VFS ABI |
+| hammer_vnops.c | USERFS VNOPS，hammer与内核的接口 |
+|   hammer_volume.c   | volume operation. |
 
 
 
